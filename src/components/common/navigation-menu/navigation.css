@@ -1,6 +1,6 @@
 svg {
     height: 32px;
-    fill: #4A3737;
+    fill: var(--brown);
 }
 
 .link-icon {
@@ -11,8 +11,8 @@ svg {
 }
 
 nav a:hover, nav a:hover * {
-    color: #05BAAF;
-    fill: #05BAAF;
+    color: var(--turquoise);
+    fill: var(--turquoise);
 }
 
 nav a {
@@ -20,5 +20,5 @@ nav a {
     padding: 5px;
     display: flex;
     align-items: center;
-    color: #4A3737;
+    color: var(--brown);
 }
