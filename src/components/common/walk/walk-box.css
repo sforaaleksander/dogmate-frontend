@@ -1,0 +1,28 @@
+.first-row, .user-id, .dog-name {
+    color: var(--dark-grey);
+}
+
+.first-row {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 18px;
+}
+
+.user-id {
+    font-size: 11px;
+}
+
+.dog-name {
+    font-size: 13px;
+    font-style: italic;
+}
+
+.dot {
+    margin: 0 1em 0 1em;
+}
+
+.walk-wrapper {
+    width: 80%;
+    height: 165px;
+    background-color: var(--cold-grey);
+}
