@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      DOGMATE
+      <h1>DOGMATE</h1>
     </div>
   );
 }
