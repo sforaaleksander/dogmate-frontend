@@ -1,0 +1,24 @@
+svg {
+    height: 32px;
+    fill: #4A3737;
+}
+
+.link-icon {
+    display: flex;
+    justify-content: center;
+    width: 45px;
+    margin: 0 10px;
+}
+
+nav a:hover, nav a:hover * {
+    color: #05BAAF;
+    fill: #05BAAF;
+}
+
+nav a {
+    font-size: 24px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    color: #4A3737;
+}
