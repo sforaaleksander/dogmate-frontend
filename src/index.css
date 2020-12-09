@@ -2,26 +2,26 @@
 @import "colours.css";
 
 body {
-  background-color: var(--warm-grey);
-  margin: 0;
-  font-family: Montserrat, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: var(--warm-grey);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
-  font-size: 48px;
-  color: var(--light-blue);
+    font-size: 48px;
+    color: var(--light-blue);
 }
 
 .logo {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .shadow {
-  text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
+    text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
 }
