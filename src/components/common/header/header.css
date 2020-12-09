@@ -1,0 +1,33 @@
+header {
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 0.5em;
+    color: #9FCCE5;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.main-avatar {
+    font-size: 32px;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 10em;
+    margin: 2vh;
+    align-self: flex-end;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.main-avatar span {
+    font-size: 42px;
+}
