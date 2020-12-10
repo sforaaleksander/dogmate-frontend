@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./index.css";
-import AvatarMenu from "./components/common/avatar-menu/AvatarMenu";
 import { LoginContext } from "./components/common/avatar-menu/LoginContext";
-import Header from "./components/common/header/Header";
 import MainTemplate from "./components/common/MainTemplate";
 
 const App = () => {
@@ -20,17 +17,8 @@ const App = () => {
   return (
     <>
       <LoginContext.Provider value={[logOut]}>
-        <Router>
-          {isLoggedIn && <MainTemplate />}
-          <h3>App</h3>
-          <Switch>
-            <Route exact path={"/"}>
-              {/*<Header />*/}
-              {/*<AvatarMenu />*/}
-              Home
-            </Route>
-          </Switch>
-        </Router>
+        {isLoggedIn && <MainTemplate />}
+        <h3>App</h3>
       </LoginContext.Provider>
     </>
   );
