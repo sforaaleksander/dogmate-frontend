@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavigationBar from "./components/common/navigation-menu/Navigation-bar";
 import React from "react";
+import Friends from "./components/friends-list/Friends";
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <div>
         <Route path="/">
           <h1>DOGMATE</h1>
-          <NavigationBar />
+          {/*<NavigationBar />*/}
+          <Friends/>
         </Route>
       </div>
     </Router>
