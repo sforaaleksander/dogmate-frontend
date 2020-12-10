@@ -15,7 +15,7 @@ const AvatarMenu = () => {
         <Link to="/settings" className={"user-menu-link"}>
           Settings
         </Link>
-        <Link to="/logout" className={"user-menu-link"} onClick={logOut}>
+        <Link to="/" className={"user-menu-link"} onClick={logOut}>
           Log out
         </Link>
       </Router>
