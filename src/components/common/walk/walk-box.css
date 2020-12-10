@@ -23,6 +23,11 @@
 
 .walk-wrapper {
     width: 80%;
-    height: 165px;
+    height: 265px;
     background-color: var(--cold-grey);
+}
+
+.walk-wrapper img {
+    height: 200px;
+    /*width*/
 }

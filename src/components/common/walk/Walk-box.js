@@ -32,6 +32,9 @@ function WalkBox({ user_name, user_id, walk_area, time, dog_name }) {
           <span>{time}</span>
         </div>
         <div className={"dog-name"}>{dog_name}</div>
+        <img
+          src={"https://miro.medium.com/max/2400/1*cX1Ve9_YQ2fQwjgA04yZ-g.png"}
+        />
       </div>
     </>
   );
