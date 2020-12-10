@@ -1,21 +1,17 @@
 import "./header.css";
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-export default function Header() {
-  const { isLogoClicked, setIsLogoClicked } = useState(true);
-
-  function changeIsAvatarClicked() {
-    setIsLogoClicked(!isLogoClicked);
-  }
-
+export default function Header({ changeIsAvatarClicked }) {
   return (
     <header className={"brown-background"}>
       <div className="logo">DOGMATE</div>
-      {/*{isLogoClicked && (*/}
       <div className="main-avatar yellow" onClick={changeIsAvatarClicked}>
         <span>A</span>
       </div>
-      )}
     </header>
   );
 }
+
+Header.propTypes = {
+  changeIsAvatarClicked: PropTypes.func.isRequired,
+};

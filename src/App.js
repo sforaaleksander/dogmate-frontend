@@ -5,6 +5,7 @@ import "./index.css";
 import AvatarMenu from "./components/common/avatar-menu/AvatarMenu";
 import { LoginContext } from "./components/common/avatar-menu/LoginContext";
 import Header from "./components/common/header/Header";
+import MainTemplate from "./components/common/MainTemplate";
 
 // export const LoggedInContext = React.createContext();
 
@@ -20,17 +21,19 @@ const App = () => {
   console.log("isLoggedIn = ", isLoggedIn);
   return (
     <>
-      <h3>App</h3>
-      <Router>
-        <Switch>
-          <LoginContext.Provider value={[logOut]}>
+      <LoginContext.Provider value={[logOut]}>
+        <Router>
+          {isLoggedIn && <MainTemplate />}
+          <h3>App</h3>
+          <Switch>
             <Route exact path={"/"}>
-              <Header />
-              <AvatarMenu />
+              {/*<Header />*/}
+              {/*<AvatarMenu />*/}
+              Home
             </Route>
-          </LoginContext.Provider>
-        </Switch>
-      </Router>
+          </Switch>
+        </Router>
+      </LoginContext.Provider>
     </>
   );
 };
