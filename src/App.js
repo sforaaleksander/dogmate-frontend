@@ -1,20 +1,39 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavigationBar from "./components/common/navigation-menu/Navigation-bar";
-import React from "react";
-import Friends from "./components/friends-list/Friends";
+import React, { useState } from "react";
 
-function App() {
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./index.css";
+import AvatarMenu from "./components/common/avatar-menu/AvatarMenu";
+import { LoginContext } from "./components/common/avatar-menu/LoginContext";
+import Header from "./components/common/header/Header";
+import MainTemplate from "./components/common/MainTemplate";
+
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const logOut = () => {
+    console.log("in logOut");
+    localStorage.clear("token");
+    setIsLoggedIn(false);
+  };
+
+  console.log("isLoggedIn = ", isLoggedIn);
   return (
-    <Router>
-      <div>
-        <Route path="/">
-          <h1>DOGMATE</h1>
-          {/*<NavigationBar />*/}
-          <Friends/>
-        </Route>
-      </div>
-    </Router>
+    <>
+      <LoginContext.Provider value={[logOut]}>
+        <Router>
+          {isLoggedIn && <MainTemplate />}
+          <h3>App</h3>
+          <Switch>
+            <Route exact path={"/"}>
+              {/*<Header />*/}
+              {/*<AvatarMenu />*/}
+              Home
+            </Route>
+          </Switch>
+        </Router>
+      </LoginContext.Provider>
+    </>
   );
-}
+};
 
 export default App;
