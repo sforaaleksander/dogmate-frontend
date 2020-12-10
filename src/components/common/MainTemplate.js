@@ -16,27 +16,25 @@ export default function MainTemplate() {
 
   return (
     <Router>
-      <div>
-        <div className="main-header brown-background">
-          <Header changeIsAvatarClicked={changeIsAvatarClicked} />
+      <div className="main-header brown-background">
+        <Header changeIsAvatarClicked={changeIsAvatarClicked} />
+      </div>
+      <div className="main-container">
+        <div className="left-menu">
+          <NavigationBar />
         </div>
-        <div className="main-container">
-          <div className="left-menu">
-            <NavigationBar />
-          </div>
-          <div className="content-container">
-            <Switch>
-              <Route exact path={"/"}>
-                Home
-              </Route>
-              <Route path={"/friends"}>
-                <Friends />
-              </Route>
-            </Switch>
-          </div>
-          <div className="right-container">
-            {isAvatarClicked && <AvatarMenu />}
-          </div>
+        <div className="content-container">
+          <Switch>
+            <Route exact path={"/"}>
+              Home
+            </Route>
+            <Route path={"/friends"}>
+              <Friends />
+            </Route>
+          </Switch>
+        </div>
+        <div className="right-container">
+          {isAvatarClicked && <AvatarMenu />}
         </div>
       </div>
     </Router>
