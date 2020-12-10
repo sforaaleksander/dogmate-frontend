@@ -6,17 +6,17 @@ import "./navigation.css";
 NavigationItemSubmenu.propTypes = {
   image: PropTypes.object.isRequired,
   text: PropTypes.string.isRequired,
-  func: PropTypes.string.isRequired,
+  openSubmenu: PropTypes.string.isRequired,
 };
 
-function NavigationItemSubmenu({ image, text, func }) {
+function NavigationItemSubmenu({ image, text, openSubmenu }) {
   return (
     <>
       <nav>
-        <div onClick={func} className={"brown"}>
+        <span onClick={openSubmenu} className={"brown menuItem"}>
           <div className={"link-icon"}>{image}</div>
           {text}
-        </div>
+        </span>
       </nav>
     </>
   );

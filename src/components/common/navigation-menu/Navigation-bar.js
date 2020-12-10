@@ -7,7 +7,7 @@ import dog from "../../../img/dog.js";
 import map from "../../../img/map.js";
 import friends from "../../../img/friends.js";
 import messages from "../../../img/messages.js";
-import { useState } from "react/cjs/react.production.min";
+import { useState } from "react";
 import NavigationItemSubmenu from "./Navigation-item-submenu";
 
 function NavigationBar() {
@@ -20,7 +20,11 @@ function NavigationBar() {
   return (
     <div>
       <NavigationItem image={home} link_to={"/home"} text={"Home"} />
-      <NavigationItemSubmenu image={dog} func={clickWalks} text={"Walks"} />
+      <NavigationItemSubmenu
+        image={dog}
+        openSubmenu={clickWalks}
+        text={"Walks"}
+      />
       <div>{isWalksClicked && <SubmenuBar />}</div>
       <NavigationItem image={map} link_to={"/map"} text={"Map"} />
       <NavigationItem image={friends} link_to={"/friends"} text={"Friends"} />

@@ -13,7 +13,10 @@ function SubmenuItem({ text, link_to }) {
     <>
       <nav>
         <NavLink to={link_to} className={"brown"} activeClassName={"turquoise"}>
-          •{text}
+          <span className={"item-with-dot"}>
+            <span className={"dot"}>•&nbsp;</span>
+            <span className={"submenu-item"}>{text}</span>
+          </span>
         </NavLink>
       </nav>
     </>
