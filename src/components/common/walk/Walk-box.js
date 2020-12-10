@@ -21,20 +21,24 @@ function WalkBox({ user_name, user_id, walk_area, time, dog_name }) {
   return (
     <>
       <div className={"walk-wrapper"}>
-        <div className={"first-row"}>
-          <span className={"user-info"}>
+        <div className={"info"}>
+          <div className={"user-info"}>
             <span className={"user-name"}>{user_name}</span>
             <span className={"user-id"}>#{user_id}</span>
-          </span>
-          <span className={"dot"}>•</span>
-          {walk_area}
-          <span className={"dot"}>•</span>
-          <span>{time}</span>
+            <span className={"dot"}>•</span>
+            <span className={"dog-name"}>{dog_name}</span>
+          </div>
+          <div>{walk_area}</div>
+          <div>{time}</div>
         </div>
-        <div className={"dog-name"}>{dog_name}</div>
-        <img
-          src={"https://miro.medium.com/max/2400/1*cX1Ve9_YQ2fQwjgA04yZ-g.png"}
-        />
+        <div className={"image-box"}>
+          <img
+            src={
+              "https://miro.medium.com/max/2400/1*cX1Ve9_YQ2fQwjgA04yZ-g.png"
+            }
+            alt={"map"}
+          />
+        </div>
       </div>
     </>
   );

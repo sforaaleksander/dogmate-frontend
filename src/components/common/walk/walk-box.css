@@ -2,14 +2,22 @@
     color: var(--dark-grey);
 }
 
-.first-row {
+.info {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
     font-size: 18px;
+    margin: 0.8em;
+    width: 40%;
+}
+
+.info div {
+    margin-bottom: 0.8em;
 }
 
 .user-id {
     font-size: 11px;
+    margin-right: 1.5em;
+
 }
 
 .dog-name {
@@ -17,17 +25,22 @@
     font-style: italic;
 }
 
+.user-info span {
+}
+
 .dot {
     margin: 0 1em 0 1em;
 }
 
 .walk-wrapper {
+    display: flex;
     width: 80%;
-    height: 265px;
+    height: 145px;
     background-color: var(--cold-grey);
 }
 
 .walk-wrapper img {
-    height: 200px;
-    /*width*/
+    height: 100px;
+    width: 265px;
+    margin: 0.7em;
 }
