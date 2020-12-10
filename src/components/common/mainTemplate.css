@@ -1,12 +1,21 @@
-.main-header {
-    height: 12vh;
+@import "../../index.css";
+
+body {
+    background-color: var(--warm-grey);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
 }
 
 .main-container {
     width: 100vw;
     display: flex;
     flex-direction: row;
-    align-items: center;
 }
 
 .left-menu {
@@ -22,84 +31,9 @@
 
 .right-container {
     width: 22.22vw;
-    align-self: flex-end;
 }
 
 .right-container .user-menu-bar {
     display: flex;
     margin-left: auto;
-    /*flex-flow: column-reverse;*/
-}
-
-/* fixme copied from old project */
-
-body {
-    background-color: #F1EFEC;
-    margin: 0;
-    font-family: Montserrat, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
-.logo {
-    font-weight: 500;
-}
-
-a {
-    text-decoration: none;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.brown-background {
-    background: #4A3737;
-}
-
-.brown {
-    color: #4A3737;
-}
-
-.light-blue {
-    background: #9FCCE5;
-}
-
-.background-gray {
-    background: #f1efec;
-}
-
-.yellow {
-    background: #E9B600;
-
-}
-
-.alert-orange {
-    background: #FF5C00;
-}
-
-.gray {
-    background: #F6F5F2;
-}
-
-.turquoise {
-    color: #05BAAF;
-}
-
-.lighter-blue {
-    background: #CAECFF;
-}
-
-.letters-dark-gray {
-    background: #5E6472;
-}
-
-.redirect-font-color {
-    color: #FFFFFF;
-}
-
-.shadow {
-    text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
 }

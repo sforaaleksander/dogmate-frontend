@@ -1,14 +1,17 @@
+@import "../../../index.css";
+
 header {
-    height: 12vh;
+    height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background: var(--brown);
 }
 
 .logo {
     margin-left: 0.5em;
-    color: #9FCCE5;
+    color: var(--light-blue);
     font-size: 48px;
     font-style: normal;
     font-weight: bold;
@@ -17,17 +20,19 @@ header {
 
 .main-avatar {
     font-size: 32px;
-    height: 8vh;
-    width: 8vh;
-    border-radius: 10em;
-    margin: 2vh;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    margin: 13px;
     align-self: flex-end;
-    color: #FFFFFF;
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background: var(--yellow);
 }
+
 .main-avatar span {
     font-size: 42px;
 }
