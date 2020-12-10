@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 import "./navigation.css";
 
 NavigationItem.propTypes = {
-  image: PropTypes.shape(PropTypes.object, PropTypes.isRequired),
-  text: PropTypes.shape(PropTypes.string, PropTypes.isRequired),
-  link_to: PropTypes.shape(PropTypes.string, PropTypes.isRequired),
+  image: PropTypes.object.isRequired,
+  text: PropTypes.string.isRequired,
+  link_to: PropTypes.string.isRequired,
 };
 
 function NavigationItem({ image, text, link_to }) {
