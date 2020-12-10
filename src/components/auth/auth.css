@@ -1,0 +1,119 @@
+@import "../../index.css";
+
+body {
+    margin: 0;
+    justify-content: center;
+}
+
+.wrapper-container {
+    display: flex;
+    justify-content: center;
+}
+
+.outer-box {
+    margin-top: 1rem;
+    font-style: normal;
+    font-weight: bold;
+    border-radius: 2.5em;
+    background-color: var(--light-blue);
+    /*width: 481px;*/
+    /*height: 386px;*/
+    /*left: 442px;*/
+    /*top: 120px;*/
+    padding: 2em;
+}
+
+.title {
+    color: var(--brown)
+}
+
+.additional-info {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.inner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.inner-box form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inner-box form input {
+    background: var(--white);
+    height: 2em;
+    border: 0;
+    border-radius: 0.4em;
+    margin: 0.5em;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+}
+
+.inner-box h1 {
+    align-self: center;
+}
+
+.inner-box h4 {
+    color: var(--alert-red);
+    margin: 0;
+    align-self: center;
+}
+
+.submit-btn {
+    background-color: var(--yellow);
+    color: var(--white);
+}
+
+.inner-box button {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    /*line-height: 1.2em;*/
+    width: 50%;
+    height: 1.45em;
+    align-self: center;
+    color: var(--white);
+    outline: 0;
+    border: 0;
+    box-shadow: 0 0.14em 0.14em rgba(0, 0, 0, 0.25);
+    border-radius: 0.38em;
+    margin: 1em;
+    cursor: pointer;
+}
+
+span {
+    color: var(--white)
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+    color: rgba(0,0,0,0.4);
+    font-size: 24px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    text-align: center;
+    color: rgba(0,0,0,0.4);
+    font-size: 24px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;
+    color: rgba(0,0,0,0.4);
+    font-size: 24px;
+}
+
+:-ms-input-placeholder {
+    text-align: center;
+    color: rgba(0,0,0,0.4);
+    font-size: 24px;
+}
