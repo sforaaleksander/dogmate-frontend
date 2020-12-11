@@ -15,6 +15,11 @@ nav a:hover, nav a:hover * {
     fill: var(--turquoise);
 }
 
+nav a, nav a * {
+    color: var(--brown);
+    fill: var(--brown);
+}
+
 nav a, .menuItem {
     font-size: 24px;
     padding: 5px;
@@ -30,9 +35,11 @@ nav a, .menuItem {
 
 .submenu-item {
     font-size: 18px;
+    color: var(--brown);
 }
 
 .item-with-dot {
     margin-left: 2.5em;
     margin-bottom: 0;
+    color: var(--brown);
 }
