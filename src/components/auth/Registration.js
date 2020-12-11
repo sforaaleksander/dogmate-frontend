@@ -50,9 +50,9 @@ export default function Registration() {
 
   return (
     <div className={"wrapper-container"}>
-      <div className={"outer-box light-blue"}>
+      <div className={"outer-box"}>
         <div className={"inner-box"}>
-          <h1 className={"brown"}>Join your dogmates!</h1>
+          <h1 className={"title"}>Join your dogmates!</h1>
           <h4>{loginErrors}</h4>
           <form onSubmit={handleSubmit}>
             <input
@@ -87,7 +87,7 @@ export default function Registration() {
               onChange={handleChange}
               required
             />
-            <button className={"yellow shadow"} type="submit">
+            <button className={"submit-btn"} type="submit">
               Register
             </button>
             <Link to="/" className={"additional-info redirect-font-color"}>
