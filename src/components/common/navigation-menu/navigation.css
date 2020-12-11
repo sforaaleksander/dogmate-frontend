@@ -15,10 +15,24 @@ nav a:hover, nav a:hover * {
     fill: var(--turquoise);
 }
 
-nav a {
+nav a, .menuItem {
     font-size: 24px;
     padding: 5px;
     display: flex;
     align-items: center;
     color: var(--brown);
+}
+
+.dot {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.submenu-item {
+    font-size: 18px;
+}
+
+.item-with-dot {
+    margin-left: 2.5em;
+    margin-bottom: 0;
 }
