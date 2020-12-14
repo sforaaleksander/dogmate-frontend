@@ -1,0 +1,53 @@
+.message-overview-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.avatar {
+    margin: 1.5em;
+    align-self: center;
+}
+.message-details {
+    border-radius: 1em;
+    background-color: var(--cold-grey);
+    margin: 1em;
+    padding: 1em;
+    width: 100%;
+}
+.message-details p {
+    margin: 0;
+}
+
+.message-from {
+    font-size: 24px;
+    color: var(--dark-grey);
+}
+.user-id {
+    font-size: 18px;
+    color: var(--light-grey);
+}
+.user-dogs {
+    font-size: 13px;
+    color: var(--light-grey);
+}
+
+.user-message {
+    font-size: 18px;
+    color: var(--dark-grey);
+}
+.user-message-date {
+    font-style: italic;
+    color: var(--dark-grey);
+    align-self: center;
+}
+.message-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.dot-separator {
+    font-weight: bolder;
+    align-self: center;
+    padding: 0 0.5em;
+    color: var(--dark-grey);
+}
