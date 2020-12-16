@@ -17,8 +17,8 @@ function Friend({ id, name, img, dogs }) {
       </NavLink>
       <span>{name}</span>
       {dogs.length !== 0 ? (
-        dogs.map(({ name }) => {
-          return <p>{name}</p>;
+        dogs.map(({ name }, index) => {
+          return <p key={index}>{name}</p>;
         })
       ) : (
         <p>{dogInfo}</p>
