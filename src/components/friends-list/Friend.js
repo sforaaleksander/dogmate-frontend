@@ -16,13 +16,13 @@ function Friend({ id, name, img, dogs }) {
         />
       </NavLink>
       <span>{name}</span>
-      <p>
-        {dogs.length !== 0
-          ? dogs.map(({ name }) => {
-              return <p>{name}</p>;
-            })
-          : dogInfo}
-      </p>
+      {dogs.length !== 0 ? (
+        dogs.map(({ name }) => {
+          return <p>{name}</p>;
+        })
+      ) : (
+        <p>{dogInfo}</p>
+      )}
       <p>#{id}</p>
     </div>
   );

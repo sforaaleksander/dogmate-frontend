@@ -18,8 +18,6 @@
 
 .friend {
     margin: 1em;
-    font-size: 12px;
-
     text-align: center;
 }
 
@@ -29,6 +27,7 @@
 
 .friend span {
     font-weight: bold;
+    color: var(--brown);
 }
 
 .friend p {
