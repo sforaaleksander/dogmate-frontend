@@ -66,8 +66,8 @@ export default function Conversation() {
       <div className="message-list-container">{renderMessages(messages)}</div>
       <div className="message-input">
         <form className="chat-input" onSubmit={handleSubmit}>
-          <input
-            type="text"
+          <textarea
+            // type="text"
             name="message"
             onChange={(e) => {
               setInputMessage(e.target.value);
