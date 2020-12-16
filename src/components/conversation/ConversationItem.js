@@ -25,7 +25,7 @@ function ConversationItem({ data, isMine }) {
       {/*<NavLink to={`friends/${id}`}>*/}
       {isMine || (
         <img
-          className={"friend-avatar"}
+          className={"conversations-friend-avatar"}
           src={avatar || defaultImg}
           alt={"#" + id}
         />
@@ -36,7 +36,7 @@ function ConversationItem({ data, isMine }) {
       </div>
       {isMine && (
         <img
-          className={"friend-avatar"}
+          className={"conversations-friend-avatar"}
           src={avatar || defaultImg}
           alt={"#" + id}
         />
