@@ -1,13 +1,16 @@
 import React from "react";
+import Dog from "./Dog";
 import "./profile.css";
 
 function DogBox({ dogs }) {
   return (
     <>
-      <span className={"user-dogs"}>My dogs:</span>
-      <div>DOGS</div>
-      <div>DOGS</div>
-      <div>DOGS</div>
+      <div className={"user-dog-list-header"}>My dogs:</div>
+      <div className={"user-dog-list"}>
+        {dogs.map((dogDetails) => (
+          <Dog dog={dogDetails} />
+        ))}
+      </div>
     </>
   );
 }
