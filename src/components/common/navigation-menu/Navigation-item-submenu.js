@@ -6,7 +6,7 @@ import "./navigation.css";
 NavigationItemSubmenu.propTypes = {
   image: PropTypes.object.isRequired,
   text: PropTypes.string.isRequired,
-  openSubmenu: PropTypes.string.isRequired,
+  openSubmenu: PropTypes.func.isRequired,
 };
 
 function NavigationItemSubmenu({ image, text, openSubmenu }) {
