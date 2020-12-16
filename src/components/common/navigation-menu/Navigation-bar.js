@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavigationItem from "./Navigation-item";
 import SubmenuBar from "./Submenu-bar";
 import "../../../index.css";
@@ -7,7 +7,6 @@ import dog from "../../../img/dog.js";
 import map from "../../../img/map.js";
 import friends from "../../../img/friends.js";
 import messages from "../../../img/messages.js";
-import { useState } from "react";
 import NavigationItemSubmenu from "./Navigation-item-submenu";
 
 function NavigationBar() {
