@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import "./avatarMenu.css";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { LoginContext } from "./LoginContext";
 
 const AvatarMenu = () => {
@@ -8,17 +8,15 @@ const AvatarMenu = () => {
 
   return (
     <div className="user-menu-bar">
-      <Router>
-        <Link to="/user-profile" className={"user-menu-link"}>
-          My profile
-        </Link>
-        <Link to="/settings" className={"user-menu-link"}>
-          Settings
-        </Link>
-        <Link to="/" className={"user-menu-link"} onClick={logOut}>
-          Log out
-        </Link>
-      </Router>
+      <NavLink to="/user-profile" className={"user-menu-link"}>
+        My profile
+      </NavLink>
+      <NavLink to="/settings" className={"user-menu-link"}>
+        Settings
+      </NavLink>
+      <NavLink to="/" className={"user-menu-link"} onClick={logOut}>
+        Log out
+      </NavLink>
     </div>
   );
 };

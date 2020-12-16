@@ -5,6 +5,8 @@ import "./mainTemplate.css";
 import { useState } from "react";
 import NavigationBar from "./navigation-menu/Navigation-bar";
 import Friends from "../friends-list/Friends";
+import Profile from "../profile/Profile";
+import { user } from "../profile/user";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MessagesOverview from "../messages/MessagesOverview";
 
@@ -32,7 +34,10 @@ export default function MainTemplate() {
             <Route path={"/friends"}>
               <Friends />
             </Route>
-            <Route exact path={"/messages"}>
+            <Route path={"/user-profile"}>
+              <Profile user={user} />
+            </Route>
+            <Route path={"/messages"}>
               <MessagesOverview />
             </Route>
           </Switch>
@@ -43,4 +48,32 @@ export default function MainTemplate() {
       </div>
     </Router>
   );
+}
+
+{
+  /*<Route path={"/user-profile"} className={"user-menu-link"}>*/
+}
+{
+  /*  My profile*/
+}
+{
+  /*</Route>*/
+}
+{
+  /*<Route path={"/settings"} className={"user-menu-link"}>*/
+}
+{
+  /*  Settings*/
+}
+{
+  /*</Route>*/
+}
+{
+  /*<Route exact path={"/"} className={"user-menu-link"}>*/
+}
+{
+  /*  Log out*/
+}
+{
+  /*</Route>*/
 }
