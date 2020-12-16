@@ -1,3 +1,9 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
 .about-title {
     font-size: 18px;
     font-weight: 500;
@@ -6,3 +12,16 @@
 .about-content {
     font-size: 14px;
 }
+
+.user-avatar img {
+    height: 93px;
+    width: 93px;
+    border-radius: 50%;
+}
+
+.user-name, .user-id {
+    font-size: 32px;
+    color: var(--dark-grey);
+    font-weight: 500;
+}
+
