@@ -49,31 +49,3 @@ export default function MainTemplate() {
     </Router>
   );
 }
-
-{
-  /*<Route path={"/user-profile"} className={"user-menu-link"}>*/
-}
-{
-  /*  My profile*/
-}
-{
-  /*</Route>*/
-}
-{
-  /*<Route path={"/settings"} className={"user-menu-link"}>*/
-}
-{
-  /*  Settings*/
-}
-{
-  /*</Route>*/
-}
-{
-  /*<Route exact path={"/"} className={"user-menu-link"}>*/
-}
-{
-  /*  Log out*/
-}
-{
-  /*</Route>*/
-}
