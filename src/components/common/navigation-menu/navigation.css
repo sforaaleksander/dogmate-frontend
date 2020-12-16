@@ -43,3 +43,9 @@ nav a, .menuItem {
     margin-bottom: 0;
     color: var(--brown);
 }
+
+.navigation-item-submenu:hover, .navigation-item-submenu:hover * {
+    cursor: pointer;
+    color: var(--turquoise);
+    fill: var(--turquoise);
+}

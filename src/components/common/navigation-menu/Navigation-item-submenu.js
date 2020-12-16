@@ -13,7 +13,10 @@ function NavigationItemSubmenu({ image, text, openSubmenu }) {
   return (
     <>
       <nav>
-        <span onClick={openSubmenu} className={"brown menuItem"}>
+        <span
+          onClick={openSubmenu}
+          className={"navigation-item-submenu brown menuItem"}
+        >
           <div className={"link-icon"}>{image}</div>
           {text}
         </span>
