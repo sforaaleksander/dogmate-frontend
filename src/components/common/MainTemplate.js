@@ -7,6 +7,7 @@ import NavigationBar from "./navigation-menu/Navigation-bar";
 import Friends from "../friends-list/Friends";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MessagesOverview from "../messages/MessagesOverview";
+import Conversation from "../conversation/Conversation";
 
 export default function MainTemplate() {
   const [isAvatarClicked, setIsAvatarClicked] = useState(false);
@@ -34,6 +35,9 @@ export default function MainTemplate() {
             </Route>
             <Route exact path={"/messages"}>
               <MessagesOverview />
+            </Route>
+            <Route exact path={"/conversations/:id"}>
+              <Conversation />
             </Route>
           </Switch>
         </div>
