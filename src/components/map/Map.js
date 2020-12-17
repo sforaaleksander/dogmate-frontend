@@ -8,6 +8,8 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 let DefaultIcon = L.icon({
   iconUrl: icon,
   shadowUrl: iconShadow,
+  iconAnchor: [16, 32],
+  popupAnchor: [-4, -32],
 });
 
 L.Marker.prototype.options.icon = DefaultIcon;
@@ -46,12 +48,15 @@ function Map() {
 
   useEffect(() => {
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(function (position) {
-        setUserPosition([position.coords.latitude, position.coords.longitude]);
-        console.log(new Date());
-        console.log("Latitude is :", position.coords.latitude);
-        console.log("Longitude is :", position.coords.longitude);
-      });
+      navigator.geolocation.getCurrentPosition((position) =>
+        setUserPosition([position.coords.latitude, position.coords.longitude])
+      );
+      // navigator.geolocation.watchPosition(function (position) {
+      //   setUserPosition([position.coords.latitude, position.coords.longitude]);
+      //   console.log(new Date());
+      //   console.log("Latitude is :", position.coords.latitude);
+      //   console.log("Longitude is :", position.coords.longitude);
+      // });
     }
   }, []);
 
