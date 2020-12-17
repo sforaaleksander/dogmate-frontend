@@ -8,12 +8,12 @@ function Dog({ dog }) {
     <div className={"dog-info"}>
       <DogInfoBlock />
       <div className={"dog-data"}>
-        <div>{name}</div>
-        <div>{gender ? "male" : "female"}</div>
-        <div>{dateOfBirth}</div>
-        <div>{breed.name}</div>
-        <div>{temper.name}</div>
-        <div>{isNeutered ? "yes" : "no"}</div>
+        <div className={"dog-description"}>{name}</div>
+        <div className={"dog-description"}>{gender ? "male" : "female"}</div>
+        <div className={"dog-description"}>{dateOfBirth}</div>
+        <div className={"dog-description"}>{breed.name}</div>
+        <div className={"dog-description"}>{temper.name}</div>
+        <div className={"dog-description"}>{isNeutered ? "yes" : "no"}</div>
       </div>
     </div>
   );

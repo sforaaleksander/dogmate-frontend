@@ -4,12 +4,12 @@ import "./profile.css";
 function DogInfoBlock() {
   return (
     <div className={"dog-info-block"}>
-      <div>name:</div>
-      <div>gender:</div>
-      <div>date of birth:</div>
-      <div>breed:</div>
-      <div>temper:</div>
-      <div>neutered:</div>
+      <div className={"dog-description"}>name:</div>
+      <div className={"dog-description"}>gender:</div>
+      <div className={"dog-description"}>date of birth:</div>
+      <div className={"dog-description"}>breed:</div>
+      <div className={"dog-description"}>temper:</div>
+      <div className={"dog-description"}>neutered:</div>
     </div>
   );
 }
