@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.about-box {
+    cursor: pointer;
+}
+
 .about-header {
     font-size: 18px;
     font-weight: 500;
@@ -24,11 +28,12 @@
 
 .about-content {
     font-size: 14px;
+    color: var(--dark-grey);
 }
 
 .user-avatar {
     position: relative;
-    right:15px;
+    right: 15px;
 }
 
 .user-avatar img {
@@ -58,7 +63,7 @@
     font-size: 18px;
     font-weight: 500;
     color: var(--brown);
-    margin-bottom: 0.7em;
+    /*margin-bottom: 0.7em;*/
 }
 
 .dog-info-block {
@@ -70,10 +75,13 @@
 .dog-info {
     display: flex;
     flex-direction: row;
+    padding: 1em 0;
 }
 
 .dog-description {
     margin-bottom: 0.5em;
+    color: var(--dark-grey);
+
 }
 
 .single-dog {
@@ -85,5 +93,5 @@
     background-color: var(--medium-grey);
     width: 90%;
     height: 2px;
-    margin: 1em 0;
+    /*margin: 1em 0;*/
 }
