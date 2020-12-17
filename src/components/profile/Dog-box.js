@@ -7,6 +7,10 @@ DogBox.propTypes = {
   dogs: PropTypes.array,
 };
 
+function isNotLastElement(id, dogs) {
+  return dogs.length + 1 !== id;
+}
+
 function DogBox({ dogs }) {
   console.log(dogs);
   return (
@@ -16,7 +20,9 @@ function DogBox({ dogs }) {
         {dogs.map((dog) => (
           <div className={"single-dog"}>
             <Dog dog={dog} key={dog.id} />
-            <div className={"dog-box-line"}></div>
+            {isNotLastElement(dog.id, dogs) && (
+              <div className={"dog-box-line"} />
+            )}
           </div>
         ))}
       </div>

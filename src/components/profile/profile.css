@@ -52,6 +52,7 @@
 .dog-info-block {
     display: flex;
     flex-direction: column;
+    margin-right: 2em;
 }
 
 .dog-info {
@@ -68,4 +69,5 @@
     background-color: var(--medium-grey);
     width: 90%;
     height: 2px;
+    margin: 1em 0;
 }
