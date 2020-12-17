@@ -2,7 +2,6 @@ import React from "react";
 import "./profile.css";
 
 function NameBox({ avatar, name, id }) {
-  console.log("name & id:" + name, id);
   return (
     <div className={"name-box"}>
       <span className={"user-avatar"}>

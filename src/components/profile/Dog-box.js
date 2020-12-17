@@ -12,7 +12,6 @@ function isNotLastElement(id, dogs) {
 }
 
 function DogBox({ dogs }) {
-  console.log(dogs);
   return (
     <div className={"user-dog-list-box"}>
       <div className={"user-dog-list-header"}>My dogs:</div>
