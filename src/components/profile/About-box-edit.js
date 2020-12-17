@@ -1,9 +1,9 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./profile.css";
 
 function AboutBoxEdit({ aboutContent }) {
-  console.log(aboutContent.length);
+  const [isChanged, setIsChanged] = useState(false);
 
   useEffect(auto_grow, []);
 
@@ -13,18 +13,27 @@ function AboutBoxEdit({ aboutContent }) {
     aboutTextArea.style.height = aboutTextArea.scrollHeight + "px";
   }
 
+  function activateSave() {
+    setIsChanged(true);
+  }
+
   return (
     <div>
       <div className={"about-header"}>About:</div>
       <textarea
         id={"about-edition"}
         className={"about-content-edit"}
-        onInput={() => auto_grow()}
+        onInput={() => {
+          auto_grow();
+          activateSave();
+        }}
         placeholder={aboutContent}
         defaultValue={aboutContent}
       />
       <div>
-        <button>Save</button>
+        <button type={"submit"} disabled={!isChanged}>
+          Save
+        </button>
         <button>Cancel</button>
       </div>
     </div>
