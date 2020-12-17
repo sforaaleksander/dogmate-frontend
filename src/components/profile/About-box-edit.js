@@ -1,9 +1,13 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import "./Profile";
+import { useEffect, useState, useContext } from "react";
+import { AboutContext } from "./About-context";
 import "./profile.css";
 
 function AboutBoxEdit({ aboutContent }) {
   const [isChanged, setIsChanged] = useState(false);
+
+  const string = useContext(AboutContext);
 
   useEffect(auto_grow, []);
 

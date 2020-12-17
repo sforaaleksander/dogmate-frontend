@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { AboutContext } from "./About-context";
 import NameBox from "./Name-box";
 import AboutBox from "./About-box";
 import AboutBoxEdit from "./About-box-edit";
@@ -16,21 +17,25 @@ function Profile({ user }) {
   }
 
   return (
-    <div className={"profile-container"}>
-      <div>
-        <NameBox avatar={avatar} name={name} id={id} />
-      </div>
-      <div className={"about-box"} onClick={() => clickAbout()}>
-        {isAboutClicked ? (
-          <AboutBoxEdit aboutContent={about} />
-        ) : (
-          <AboutBox aboutContent={about} />
-        )}
-      </div>
-      <div>
-        <DogBox dogs={dogs} />
-      </div>
-    </div>
+    <>
+      <AboutContext.Provider value={[isAboutClicked, setIsAboutClicked]}>
+        <div className={"profile-container"}>
+          <div>
+            <NameBox avatar={avatar} name={name} id={id} />
+          </div>
+          <div className={"about-box"} onClick={() => clickAbout()}>
+            {isAboutClicked ? (
+              <AboutBoxEdit aboutContent={about} />
+            ) : (
+              <AboutBox aboutContent={about} />
+            )}
+          </div>
+          <div>
+            <DogBox dogs={dogs} />
+          </div>
+        </div>
+      </AboutContext.Provider>
+    </>
   );
 }
 
