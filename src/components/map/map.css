@@ -1,0 +1,7 @@
+#mapId {
+    width: 55vw;
+}
+
+.map {
+    height: calc(100vh - 80px);
+}
