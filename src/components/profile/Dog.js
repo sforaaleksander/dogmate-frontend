@@ -2,25 +2,17 @@ import "./profile.css";
 import React from "react";
 import DogInfoBlock from "./Dog-info-block";
 
-function Dog(props) {
-  const {
-    id,
-    name,
-    gender,
-    dateOfBirth,
-    breed,
-    temper,
-    isNeutered,
-  } = props.dog;
+function Dog({ dog }) {
+  const { id, name, gender, dateOfBirth, breed, temper, isNeutered } = dog;
   return (
     <div className={"dog-info"}>
       <DogInfoBlock />
-      <div className={"dog-data"} key={id}>
+      <div className={"dog-data"}>
         <div>{name}</div>
         <div>{gender}</div>
         <div>{dateOfBirth}</div>
-        <div>{breed}</div>
-        <div>{temper}</div>
+        <div>{breed.name}</div>
+        <div>{temper.name}</div>
         <div>{isNeutered}</div>
       </div>
     </div>

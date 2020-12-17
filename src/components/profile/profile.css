@@ -51,5 +51,11 @@
 
 .dog-info-block {
     display: flex;
+    flex-direction: column;
+}
+
+.dog-info {
+    display: flex;
+    flex-direction: row;
 }
 

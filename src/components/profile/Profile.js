@@ -6,6 +6,8 @@ import "./profile.css";
 
 function Profile({ user }) {
   const { avatar, name, id, about, dogs } = user;
+  console.log("-------------");
+  console.log(dogs);
   console.log("user profile");
   return (
     <div className={"profile-container"}>
