@@ -8,6 +8,7 @@ import Friends from "../friends-list/Friends";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MessagesOverview from "../messages/MessagesOverview";
 import Conversation from "../conversation/Conversation";
+import Map from "../map/Map";
 
 export default function MainTemplate() {
   const [isAvatarClicked, setIsAvatarClicked] = useState(false);
@@ -38,6 +39,9 @@ export default function MainTemplate() {
             </Route>
             <Route exact path={"/conversations/:id"}>
               <Conversation />
+            </Route>
+            <Route exact path={"/map"}>
+              <Map />
             </Route>
           </Switch>
         </div>
