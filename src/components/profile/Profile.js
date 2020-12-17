@@ -12,7 +12,7 @@ function Profile({ user }) {
   const [isAboutClicked, setIsAboutClicked] = useState(false);
 
   function clickAbout() {
-    setIsAboutClicked(!isAboutClicked);
+    setIsAboutClicked(true);
   }
 
   return (

@@ -26,9 +26,18 @@
     color: var(--brown);
 }
 
-.about-content {
+.about-content, .about-content-edit::placeholder {
     font-size: 14px;
     color: var(--dark-grey);
+}
+
+.about-content-edit {
+    height: 7em;
+    width: 80%;
+    resize: none;
+    border-radius: 5%;
+    box-shadow: none;
+    border: none;
 }
 
 .user-avatar {
