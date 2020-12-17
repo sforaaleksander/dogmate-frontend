@@ -1,10 +1,16 @@
 import React from "react";
+import { useEffect } from "react";
+import "./profile.css";
 
 function AboutBoxEdit({ aboutContent }) {
+  console.log(aboutContent.length);
+
+  useEffect(auto_grow, []);
+
   function auto_grow() {
-    let element = document.getElementById("about-edition");
-    element.style.height = "5px";
-    element.style.height = element.scrollHeight + "px";
+    const aboutTextArea = document.getElementById("about-edition");
+    aboutTextArea.style.height = "5px";
+    aboutTextArea.style.height = aboutTextArea.scrollHeight + "px";
   }
 
   return (
@@ -15,6 +21,7 @@ function AboutBoxEdit({ aboutContent }) {
         className={"about-content-edit"}
         onInput={() => auto_grow()}
         placeholder={aboutContent}
+        defaultValue={aboutContent}
       />
       <div>
         <button>Save</button>

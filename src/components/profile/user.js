@@ -2,7 +2,11 @@ export const user = {
   avatar: "https://www.w3schools.com/howto/img_avatar.png",
   name: "Andrew",
   id: 120,
-  about: "Oh came and walk with me",
+  about:
+    "Oh came and walk with me and walk with me and walk with me " +
+    "and walk with me and walk with me and walk with me " +
+    "and walk with me and walk with me and walk with me and walk with me " +
+    "and walk with me and walk with me and walk with me",
   dogs: [
     {
       id: 1,
