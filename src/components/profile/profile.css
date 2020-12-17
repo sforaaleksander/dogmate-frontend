@@ -59,3 +59,13 @@
     flex-direction: row;
 }
 
+.single-dog {
+    display: grid;
+}
+
+.dog-box-line {
+    justify-self: center;
+    background-color: var(--medium-grey);
+    width: 90%;
+    height: 2px;
+}

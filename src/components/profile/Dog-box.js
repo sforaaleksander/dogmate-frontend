@@ -14,7 +14,10 @@ function DogBox({ dogs }) {
       <div className={"user-dog-list-header"}>My dogs:</div>
       <div className={"user-dog-list"}>
         {dogs.map((dog) => (
-          <Dog dog={dog} key={dog.id} />
+          <div className={"single-dog"}>
+            <Dog dog={dog} key={dog.id} />
+            <div className={"dog-box-line"}></div>
+          </div>
         ))}
       </div>
     </>
