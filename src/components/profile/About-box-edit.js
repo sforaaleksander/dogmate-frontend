@@ -8,14 +8,7 @@ import "./profile.css";
 function AboutBoxEdit({ aboutContent }) {
   const [isChanged, setIsChanged] = useState(false);
 
-  const unClickAbout = useContext(AboutContext);
-
-  // function unClickAbout() {
-  //   console.log("unclicking");
-  //   setIsAboutClicked(false);
-  //   const aboutBox = document.getElementById("about-box");
-  //   aboutBox.classList.toggle("point-me");
-  // }
+  const unClickAbout = useContext(AboutContext)[1];
 
   useEffect(auto_grow, []);
 

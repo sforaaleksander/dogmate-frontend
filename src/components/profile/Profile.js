@@ -7,14 +7,14 @@ import AboutBoxEdit from "./About-box-edit";
 import DogBox from "./Dog-box";
 import "./profile.css";
 
-const aboutBox = document.getElementById("about-box");
-
 function Profile({ user }) {
   const { avatar, name, id, about, dogs } = user;
 
   const [isAboutClicked, setIsAboutClicked] = useState(false);
 
   function clickAbout() {
+    const aboutBox = document.getElementById("about-box");
+
     console.log(isAboutClicked);
     setIsAboutClicked(true);
     aboutBox.classList.toggle("point-me");
@@ -22,6 +22,8 @@ function Profile({ user }) {
   }
 
   function unClickAbout() {
+    const aboutBox = document.getElementById("about-box");
+
     setIsAboutClicked(false);
     console.log("unclicking");
     console.log(isAboutClicked);
@@ -30,16 +32,12 @@ function Profile({ user }) {
 
   return (
     <>
-      <AboutContext.Provider value={unClickAbout}>
+      <AboutContext.Provider value={[clickAbout, unClickAbout]}>
         <div className={"profile-container"}>
           <div>
             <NameBox avatar={avatar} name={name} id={id} />
           </div>
-          <div
-            id={"about-box"}
-            className={"about-box point-me"}
-            onClick={() => clickAbout()}
-          >
+          <div id={"about-box"} className={"about-box"}>
             {isAboutClicked ? (
               <AboutBoxEdit aboutContent={about} />
             ) : (
