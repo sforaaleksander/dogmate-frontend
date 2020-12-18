@@ -6,14 +6,32 @@ function Dog({ dog }) {
   const { name, gender, dateOfBirth, breed, temper, isNeutered } = dog;
   return (
     <div className={"dog-info"}>
-      <DogInfoBlock />
+      {/*<DogInfoBlock />*/}
       <div className={"dog-data"}>
-        <div className={"dog-description"}>{name}</div>
-        <div className={"dog-description"}>{gender ? "male" : "female"}</div>
-        <div className={"dog-description"}>{dateOfBirth}</div>
-        <div className={"dog-description"}>{breed.name}</div>
-        <div className={"dog-description"}>{temper.name}</div>
-        <div className={"dog-description"}>{isNeutered ? "yes" : "no"}</div>
+        <div className={"dog-description"}>
+          <span className={"description-title"}> name:</span>
+          {name}
+        </div>
+        <div className={"dog-description"}>
+          <span className={"description-title"}> gender:</span>
+          {gender ? "male" : "female"}
+        </div>
+        <div className={"dog-description"}>
+          <span className={"description-title"}> date of birth:</span>
+          {dateOfBirth}
+        </div>
+        <div className={"dog-description"}>
+          <span className={"description-title"}> breed:</span>
+          {breed.name}
+        </div>
+        <div className={"dog-description"}>
+          <span className={"description-title"}> temper:</span>
+          {temper.name}
+        </div>
+        <div className={"dog-description"}>
+          <span className={"description-title"}> neutered:</span>
+          {isNeutered ? "yes" : "no"}
+        </div>
       </div>
     </div>
   );
