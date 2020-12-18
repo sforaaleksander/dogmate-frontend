@@ -7,20 +7,30 @@ import AboutBoxEdit from "./About-box-edit";
 import DogBox from "./Dog-box";
 import "./profile.css";
 
+const aboutBox = document.getElementById("about-box");
+
 function Profile({ user }) {
   const { avatar, name, id, about, dogs } = user;
 
   const [isAboutClicked, setIsAboutClicked] = useState(false);
 
   function clickAbout() {
+    console.log(isAboutClicked);
     setIsAboutClicked(true);
-    const aboutBox = document.getElementById("about-box");
+    aboutBox.classList.toggle("point-me");
+    console.log(isAboutClicked);
+  }
+
+  function unClickAbout() {
+    setIsAboutClicked(false);
+    console.log("unclicking");
+    console.log(isAboutClicked);
     aboutBox.classList.toggle("point-me");
   }
 
   return (
     <>
-      <AboutContext.Provider value={[isAboutClicked, setIsAboutClicked]}>
+      <AboutContext.Provider value={unClickAbout}>
         <div className={"profile-container"}>
           <div>
             <NameBox avatar={avatar} name={name} id={id} />

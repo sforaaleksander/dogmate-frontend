@@ -8,7 +8,14 @@ import "./profile.css";
 function AboutBoxEdit({ aboutContent }) {
   const [isChanged, setIsChanged] = useState(false);
 
-  const string = useContext(AboutContext);
+  const unClickAbout = useContext(AboutContext);
+
+  // function unClickAbout() {
+  //   console.log("unclicking");
+  //   setIsAboutClicked(false);
+  //   const aboutBox = document.getElementById("about-box");
+  //   aboutBox.classList.toggle("point-me");
+  // }
 
   useEffect(auto_grow, []);
 
@@ -39,7 +46,9 @@ function AboutBoxEdit({ aboutContent }) {
         <button className={"button"} type={"submit"} disabled={!isChanged}>
           Save
         </button>
-        <button className={"button"}>Cancel</button>
+        <button className={"button"} onClick={() => unClickAbout()}>
+          Cancel
+        </button>
       </div>
     </div>
   );
