@@ -9,28 +9,34 @@ function Dog({ dog }) {
       {/*<DogInfoBlock />*/}
       <div className={"dog-data"}>
         <div className={"dog-description"}>
-          <span className={"description-title"}> name:</span>
-          {name}
+          <div className={"description-title"}> name:</div>
+          <div className={"description-content"}> {name}</div>
         </div>
         <div className={"dog-description"}>
-          <span className={"description-title"}> gender:</span>
-          {gender ? "male" : "female"}
+          <div className={"description-title"}> gender:</div>
+          <div className={"description-content"}>
+            {" "}
+            {gender ? "male" : "female"}
+          </div>
         </div>
         <div className={"dog-description"}>
-          <span className={"description-title"}> date of birth:</span>
-          {dateOfBirth}
+          <div className={"description-title"}> date of birth:</div>
+          <div className={"description-content"}> {dateOfBirth}</div>
         </div>
         <div className={"dog-description"}>
-          <span className={"description-title"}> breed:</span>
-          {breed.name}
+          <div className={"description-title"}> breed:</div>
+          <div className={"description-content"}> {breed.name}</div>
         </div>
         <div className={"dog-description"}>
-          <span className={"description-title"}> temper:</span>
-          {temper.name}
+          <div className={"description-title"}> temper:</div>
+          <div className={"description-content"}> {temper.name}</div>
         </div>
         <div className={"dog-description"}>
-          <span className={"description-title"}> neutered:</span>
-          {isNeutered ? "yes" : "no"}
+          <div className={"description-title"}> neutered:</div>
+          <div className={"description-content"}>
+            {" "}
+            {isNeutered ? "yes" : "no"}
+          </div>
         </div>
       </div>
     </div>

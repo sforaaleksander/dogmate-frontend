@@ -2,10 +2,9 @@
 
 .profile-container {
     display: flex;
-    float: right;
     flex-direction: column;
     margin-top: 1em;
-    max-width: 70%;
+    width: 70%;
 }
 
 .profile-container > div {
@@ -39,7 +38,7 @@
 }
 
 .about-content-edit {
-    width: 80%;
+    width: 100%;
     resize: none;
     border-radius: 5%;
     box-shadow: none;
@@ -93,15 +92,21 @@
 }
 
 .dog-info {
-    display: flex;
-    flex-direction: row;
     padding: 1em 0;
 }
 
-.dog-description {
+.description-title, .description-content {
     margin-bottom: 0.5em;
     color: var(--dark-grey);
+    display: inline-block;
+}
 
+.description-title {
+    width: 40%;
+}
+
+.description-content {
+    width: 60%;
 }
 
 .single-dog {
