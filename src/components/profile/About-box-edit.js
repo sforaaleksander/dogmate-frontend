@@ -1,5 +1,6 @@
 import React from "react";
 import "./Profile";
+import "../../index.css";
 import { useEffect, useState, useContext } from "react";
 import { AboutContext } from "./About-context";
 import "./profile.css";
@@ -35,10 +36,10 @@ function AboutBoxEdit({ aboutContent }) {
         defaultValue={aboutContent}
       />
       <div>
-        <button type={"submit"} disabled={!isChanged}>
+        <button className={"button"} type={"submit"} disabled={!isChanged}>
           Save
         </button>
-        <button>Cancel</button>
+        <button className={"button"}>Cancel</button>
       </div>
     </div>
   );

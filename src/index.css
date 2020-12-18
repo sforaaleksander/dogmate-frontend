@@ -25,3 +25,10 @@ a {
 .shadow {
     text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
 }
+
+.button {
+    background: #C7E1F0;
+    border-radius: 10px;
+    border-style: solid;
+    margin-right: 2em;
+}

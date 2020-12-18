@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-.about-box {
+.point-me {
     cursor: pointer;
 }
 
@@ -43,6 +43,7 @@
     border-radius: 5%;
     box-shadow: none;
     border: none;
+    margin-bottom: 1em;
 }
 
 .user-avatar {

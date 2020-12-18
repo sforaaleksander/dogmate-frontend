@@ -14,6 +14,8 @@ function Profile({ user }) {
 
   function clickAbout() {
     setIsAboutClicked(true);
+    const aboutBox = document.getElementById("about-box");
+    aboutBox.classList.toggle("point-me");
   }
 
   return (
@@ -23,7 +25,11 @@ function Profile({ user }) {
           <div>
             <NameBox avatar={avatar} name={name} id={id} />
           </div>
-          <div className={"about-box"} onClick={() => clickAbout()}>
+          <div
+            id={"about-box"}
+            className={"about-box point-me"}
+            onClick={() => clickAbout()}
+          >
             {isAboutClicked ? (
               <AboutBoxEdit aboutContent={about} />
             ) : (
