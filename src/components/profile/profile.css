@@ -57,10 +57,16 @@
     border-radius: 50%;
 }
 
-.user-name, .user-id {
+.name-box .user-name {
     font-size: 32px;
     color: var(--dark-grey);
     font-weight: 500;
+}
+
+.name-box .user-id {
+    font-size: 24px;
+    color: var(--dark-grey);
+    font-weight: 300;
 }
 
 .user-dog-list-box {
