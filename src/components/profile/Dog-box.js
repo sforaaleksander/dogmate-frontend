@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Dog from "./Dog";
+import DogEdit from "./Dog-edit";
 import "./profile.css";
 
 DogBox.propTypes = {
@@ -18,7 +19,7 @@ function DogBox({ dogs }) {
       <div className={"user-dog-list"}>
         {dogs.map((dog) => (
           <div className={"single-dog"}>
-            <Dog dog={dog} key={dog.id} />
+            <DogEdit dog={dog} key={dog.id} />
             {isNotLastElement(dog.id, dogs) && (
               <div className={"dog-box-line"} />
             )}

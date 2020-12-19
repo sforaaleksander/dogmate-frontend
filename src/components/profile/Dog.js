@@ -3,6 +3,7 @@ import React from "react";
 
 function Dog({ dog }) {
   const { name, gender, dateOfBirth, breed, temper, isNeutered } = dog;
+
   return (
     <div className={"dog-info"}>
       <div className={"dog-data"}>

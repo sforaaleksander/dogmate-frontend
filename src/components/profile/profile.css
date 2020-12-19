@@ -95,7 +95,7 @@
     padding: 1em 0;
 }
 
-.description-title, .description-content {
+.description-title, .description-content, .description-content-edit {
     margin-bottom: 0.5em;
     color: var(--dark-grey);
     display: inline-block;
@@ -107,6 +107,10 @@
 
 .description-content {
     width: 60%;
+}
+
+.description-content-edit {
+    width: 50%;
 }
 
 .single-dog {
