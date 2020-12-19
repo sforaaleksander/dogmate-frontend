@@ -36,7 +36,6 @@ function DogEdit({ dog }) {
             <select
               className={"description-content-edit"}
               defaultValue={gender ? "male" : "female"}
-              // onInput={}
             >
               <option value="male">male</option>
               <option value="female">female</option>
