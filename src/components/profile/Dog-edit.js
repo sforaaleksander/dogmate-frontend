@@ -4,30 +4,35 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 function DogEdit({ dog }) {
+  const token = Cookies.get("user");
+  const config = {
+    headers: { Authorization: `${token}`, withCredentials: true },
+  };
   const { id, name, sex, dateOfBirth, breed, temper, isNeutered } = dog;
 
   const [isChanged, setIsChanged] = useState(false);
   const sexString = sex ? "male" : "female";
   const isNeuteredString = isNeutered ? "yes" : "no";
 
-  const [form, setForm] = useState({
-    name: { name },
-    sex: { sexString },
-    dateOfBirth: { dateOfBirth },
-    breed: { breed },
-    temper: [temper],
-    isNeutered: { isNeuteredString },
-  });
+  const [breeds, setBreeds] = useState([]);
+  useEffect(() => console.log(breeds), [breeds]);
 
-  // let token =
-  //   "eyJhbGciOiJIUzUxMiJ9." +
-  //   "eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5" +
-  //   "IjoiUk9MRV9VU0VSIn1dLCJpYXQiOjE2MDU2OTg3NDMsImV4cCI6MTYwNjUxODAwMH0." +
-  //   "S9VRI3jYLt5U4W8Nq2laNDe5uo1q0t01tk5mihmfO-61E6SxNZ4-T8hbzc6MMV5mlZ_X7R5-xt3e3CU_pu-nzw";
-  //
-  // const config = {
-  //   headers: { Authorization: `Bearer ${token}` },
-  // };
+  function loadBreeds() {
+    axios
+      .get("http://localhost:8080/api/v1/breeds/", config)
+      .then((data) => setBreeds(data.data));
+  }
+
+  useEffect(() => loadBreeds(), []);
+
+  const [form, setForm] = useState({
+    name: name,
+    sex: sexString,
+    dateOfBirth: dateOfBirth,
+    breed: breed,
+    temper: temper,
+    isNeutered: isNeuteredString,
+  });
 
   function handleChange(e) {
     const name = e.target.name;
@@ -36,38 +41,21 @@ function DogEdit({ dog }) {
     setForm({ ...form, [name]: value });
   }
 
-  // function handleSubmit(e, id) {
-  //   console.log("save");
-  //   axios.put("http://localhost:8080/api/v1/dogs/" + { id }, {
-  //     name: form.name,
-  //     sex: form.sex,
-  //     dateOfBirth: form.dateOfBirth,
-  //     breed: form.breed,
-  //     temper: form.temper,
-  //     isNeutered: form.isNeutered,
-  //   });
-  // }
-
   function handleSubmit(e, id) {
-    const token = Cookies.get("user");
-    const config = {
-      headers: { Authorization: `${token}`, withCredentials: true },
+    const data = {
+      name: form.name,
+      // sex: form.sex,
+      // dateOfBirth: form.dateOfBirth,
+      // breed: form.breed,
+      // temper: form.temper,
+      // isNeutered: form.isNeutered,
     };
+    console.log("id: " + id);
     console.log(config);
+    console.log(data);
     console.log("save");
     axios
-      .put(
-        "http://localhost:8080/api/v1/dogs/" + id,
-        {
-          name: form.name,
-          sex: form.sex,
-          dateOfBirth: form.dateOfBirth,
-          breed: form.breed,
-          temper: form.temper,
-          isNeutered: form.isNeutered,
-        },
-        config
-      )
+      .patch("http://localhost:8080/api/v1/dogs/" + id, data, config)
       .then((value) => {
         console.log(value);
       })
@@ -80,15 +68,6 @@ function DogEdit({ dog }) {
     console.log(data);
   }, [data]);
 
-  // function handleSubmit(e, id) {
-  //   console.log("save");
-  //   console.log("id:" + id);
-  //   axios
-  //     .get("http://api.github.com/users/sforaaleksander")
-  //     .then((data) => setData(data))
-  //     .catch((error) => console.log(error));
-  // }
-
   function setMaxDate() {
     document.getElementById("date-picker").max = new Date(
       new Date().getTime() - new Date().getTimezoneOffset() * 60000
@@ -99,7 +78,6 @@ function DogEdit({ dog }) {
 
   function activateSave() {
     setIsChanged(true);
-    console.log(form);
   }
 
   return (
@@ -126,10 +104,10 @@ function DogEdit({ dog }) {
             <select
               className={"description-content-edit"}
               defaultValue={sexString}
-              name={"sex"}
+              name={"is-male"}
             >
-              <option value="male">male</option>
-              <option value="female">female</option>
+              <option value={true}>male</option>
+              <option value={false}>female</option>
             </select>
           </div>
           <div className={"dog-description"}>
