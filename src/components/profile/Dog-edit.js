@@ -15,15 +15,22 @@ function DogEdit({ dog }) {
   const isNeuteredString = isNeutered ? "yes" : "no";
 
   const [breeds, setBreeds] = useState([]);
-  useEffect(() => console.log(breeds), [breeds]);
-
   function loadBreeds() {
     axios
       .get("http://localhost:8080/api/v1/breeds?type=allData", config)
-      .then((data) => setBreeds(data.data));
+      .then((b) => setBreeds(b.data));
+  }
+  const [tempers, setTempers] = useState([]);
+  function loadTempers() {
+    axios
+      .get("http://localhost:8080/api/v1/tempers?type=allData", config)
+      .then((t) => setTempers(t.data));
   }
 
-  useEffect(() => loadBreeds(), []);
+  useEffect(() => {
+    loadBreeds();
+    loadTempers();
+  }, []);
 
   const [form, setForm] = useState({
     name: name,
@@ -129,10 +136,9 @@ function DogEdit({ dog }) {
               defaultValue={breed.name}
               name={"breed"}
             >
-              <option value="german shepherd">german shepherd</option>
-              <option value="bloodhound">bloodhound</option>
-              <option value="greyhound">greyhound</option>
-              <option value="doggo argentino">doggo argentino</option>
+              {breeds.map((breed) => {
+                return <option value={breed.id}>{breed.name}</option>;
+              })}
             </select>
           </div>
           <div className={"dog-description"}>
@@ -142,10 +148,14 @@ function DogEdit({ dog }) {
               defaultValue={temper.name}
               name={"temper"}
             >
-              <option value="german shepherd">happy</option>
-              <option value="bloodhound">unhappy</option>
-              <option value="greyhound">friendly</option>
-              <option value="doggo argentino">other</option>
+              {tempers.map((temper) => {
+                console.log(temper);
+                return <option value={temper.id}>{temper.name}</option>;
+              })}
+              {/*<option value="german shepherd">happy</option>*/}
+              {/*<option value="bloodhound">unhappy</option>*/}
+              {/*<option value="greyhound">friendly</option>*/}
+              {/*<option value="doggo argentino">other</option>*/}
             </select>
           </div>
           <div className={"dog-description"}>
