@@ -19,7 +19,7 @@ function DogEdit({ dog }) {
 
   function loadBreeds() {
     axios
-      .get("http://localhost:8080/api/v1/breeds/", config)
+      .get("http://localhost:8080/api/v1/breeds?type=allData", config)
       .then((data) => setBreeds(data.data));
   }
 
