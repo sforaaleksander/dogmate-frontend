@@ -13,9 +13,11 @@ export const user = {
       name: "Pammi",
       dateOfBirth: "2010-12-06",
       breed: {
+        id: 53,
         name: "GREAT SWISS MOUNTAIN DOG",
       },
       temper: {
+        id: 5,
         name: "fearful",
       },
       walks: [],
@@ -28,9 +30,11 @@ export const user = {
       name: "Dorise",
       dateOfBirth: "2011-09-11",
       breed: {
+        id: 207,
         name: "CHIHUAHUA",
       },
       temper: {
+        id: 3,
         name: "easy-going",
       },
       walks: [],
