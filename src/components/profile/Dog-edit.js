@@ -49,18 +49,17 @@ function DogEdit({ dog }) {
   }
 
   function handleSubmit(e, id) {
+    console.log(breed);
+    console.log(temper);
     const data = {
       name: form.name,
       sex: form.sex,
       dateOfBirth: form.dateOfBirth,
-      breed: JSON.parse(form.breed),
-      temper: JSON.parse(form.temper),
+      breed: form.breed !== breed ? JSON.parse(form.breed) : null,
+      temper: form.temper !== temper ? JSON.parse(form.temper) : null,
       isNeutered: form.isNeutered,
     };
-    console.log("id: " + id);
-    console.log(config);
-    console.log(data);
-    console.log("save");
+
     axios
       .patch("http://localhost:8080/api/v1/dogs/" + id, data, config)
       .then((value) => {
@@ -110,9 +109,9 @@ function DogEdit({ dog }) {
             <div className={"description-title"}> sex:</div>
             <select
               className={"description-content-edit"}
-              defaultValue={sexString}
               name={"is-male"}
             >
+              <option value={null} disabled selected hidden>{sexString}</option>
               <option value={true}>male</option>
               <option value={false}>female</option>
             </select>
@@ -133,9 +132,9 @@ function DogEdit({ dog }) {
             <div className={"description-title"}> breed:</div>
             <select
               className={"description-content-edit"}
-              defaultValue={breed.name}
               name={"breed"}
             >
+              <option value={null} disabled selected hidden>{breed.name}</option>
               {breeds.map((breed) => {
                 return (
                   <option value={JSON.stringify(breed)}>{breed.name}</option>
@@ -147,9 +146,9 @@ function DogEdit({ dog }) {
             <div className={"description-title"}> temper:</div>
             <select
               className={"description-content-edit"}
-              defaultValue={temper.name}
               name={"temper"}
             >
+              <option value={null} disabled selected hidden>{temper.name}</option>
               {tempers.map((temper) => {
                 return (
                   <option value={JSON.stringify(temper)}>{temper.name}</option>
@@ -161,8 +160,9 @@ function DogEdit({ dog }) {
             <div className={"description-title"}> neutered:</div>
             <select
               className={"description-content-edit"}
-              defaultValue={isNeuteredString}
+              name={"is-neutered"}
             >
+              <option value={null} disabled selected hidden>{isNeuteredString}</option>
               <option value={true}>yes</option>
               <option value={false}>no</option>
             </select>
