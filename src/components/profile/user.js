@@ -21,7 +21,7 @@ export const user = {
         name: "fearful"
       },
       walks: [],
-      male: false,
+      isMale: false,
       defaultDog: true,
       neutered: true,
     },
@@ -38,7 +38,7 @@ export const user = {
         name: "easy-going"
       },
       walks: [],
-      male: false,
+      isMale: false,
       defaultDog: true,
       neutered: false,
     }

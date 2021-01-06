@@ -8,10 +8,10 @@ function DogEdit({ dog }) {
   const config = {
     headers: { Authorization: `${token}`, withCredentials: true },
   };
-  const { id, name, sex, dateOfBirth, breed, temper, isNeutered } = dog;
+  const { id, name, isMale, dateOfBirth, breed, temper, isNeutered } = dog;
 
   const [isChanged, setIsChanged] = useState(false);
-  const sexString = sex ? "male" : "female";
+  const isMaleString = isMale ? "male" : "female";
   const isNeuteredString = isNeutered ? "yes" : "no";
 
   const [breeds, setBreeds] = useState([]);
@@ -34,7 +34,7 @@ function DogEdit({ dog }) {
 
   const [form, setForm] = useState({
     name: name,
-    sex: sexString,
+    isMale: isMaleString,
     dateOfBirth: dateOfBirth,
     breed: breed,
     temper: temper,
@@ -53,12 +53,14 @@ function DogEdit({ dog }) {
     console.log(temper);
     const data = {
       name: form.name,
-      sex: form.sex,
+      isMale: form.isMale === "yes",
       dateOfBirth: form.dateOfBirth,
       breed: form.breed !== breed ? JSON.parse(form.breed) : null,
       temper: form.temper !== temper ? JSON.parse(form.temper) : null,
-      isNeutered: form.isNeutered,
+      isNeutered: form.isNeutered === "yes",
     };
+
+    console.log(data);
 
     axios
       .patch("http://localhost:8080/api/v1/dogs/" + id, data, config)
@@ -109,11 +111,11 @@ function DogEdit({ dog }) {
             <div className={"description-title"}> sex:</div>
             <select
               className={"description-content-edit"}
-              name={"is-male"}
+              name={"isMale"}
             >
-              <option value={null} disabled selected hidden>{sexString}</option>
-              <option value={true}>male</option>
-              <option value={false}>female</option>
+              <option value={null} disabled selected hidden>{isMaleString}</option>
+              <option value="yes">male</option>
+              <option value="no">female</option>
             </select>
           </div>
           <div className={"dog-description"}>
@@ -122,7 +124,7 @@ function DogEdit({ dog }) {
               className={"description-content-edit"}
               id={"date-picker"}
               type="date"
-              name={"date-of-birth"}
+              name={"dateOfBirth"}
               defaultValue={dateOfBirth}
               min="2000-01-01"
               onInput={() => setMaxDate()}
@@ -160,11 +162,11 @@ function DogEdit({ dog }) {
             <div className={"description-title"}> neutered:</div>
             <select
               className={"description-content-edit"}
-              name={"is-neutered"}
+              name={"isNeutered"}
             >
               <option value={null} disabled selected hidden>{isNeuteredString}</option>
-              <option value={true}>yes</option>
-              <option value={false}>no</option>
+              <option value="yes">yes</option>
+              <option value="no">no</option>
             </select>
           </div>
         </div>
