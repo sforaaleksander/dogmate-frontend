@@ -18,13 +18,13 @@ function DogEdit({ dog }) {
   function loadBreeds() {
     axios
       .get("http://localhost:8080/api/v1/breeds?type=allData", config)
-      .then((b) => setBreeds(b.data));
+      .then((data) => setBreeds(data.data));
   }
   const [tempers, setTempers] = useState([]);
   function loadTempers() {
     axios
       .get("http://localhost:8080/api/v1/tempers?type=allData", config)
-      .then((t) => setTempers(t.data));
+      .then((data) => setTempers(data.data));
   }
 
   useEffect(() => {
@@ -51,11 +51,11 @@ function DogEdit({ dog }) {
   function handleSubmit(e, id) {
     const data = {
       name: form.name,
-      // sex: form.sex,
-      // dateOfBirth: form.dateOfBirth,
-      // breed: form.breed,
-      // temper: form.temper,
-      // isNeutered: form.isNeutered,
+      sex: form.sex,
+      dateOfBirth: form.dateOfBirth,
+      breed: JSON.parse(form.breed),
+      temper: JSON.parse(form.temper),
+      isNeutered: form.isNeutered,
     };
     console.log("id: " + id);
     console.log(config);
@@ -137,7 +137,9 @@ function DogEdit({ dog }) {
               name={"breed"}
             >
               {breeds.map((breed) => {
-                return <option value={breed.id}>{breed.name}</option>;
+                return (
+                  <option value={JSON.stringify(breed)}>{breed.name}</option>
+                );
               })}
             </select>
           </div>
@@ -149,13 +151,10 @@ function DogEdit({ dog }) {
               name={"temper"}
             >
               {tempers.map((temper) => {
-                console.log(temper);
-                return <option value={temper.id}>{temper.name}</option>;
+                return (
+                  <option value={JSON.stringify(temper)}>{temper.name}</option>
+                );
               })}
-              {/*<option value="german shepherd">happy</option>*/}
-              {/*<option value="bloodhound">unhappy</option>*/}
-              {/*<option value="greyhound">friendly</option>*/}
-              {/*<option value="doggo argentino">other</option>*/}
             </select>
           </div>
           <div className={"dog-description"}>
