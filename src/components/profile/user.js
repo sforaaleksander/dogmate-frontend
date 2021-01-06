@@ -14,11 +14,11 @@ export const user = {
       dateOfBirth: "2010-12-06",
       breed: {
         id: 53,
-        name: "GREAT SWISS MOUNTAIN DOG",
+        name: "GREAT SWISS MOUNTAIN DOG"
       },
       temper: {
         id: 5,
-        name: "fearful",
+        name: "fearful"
       },
       walks: [],
       male: false,
@@ -31,16 +31,16 @@ export const user = {
       dateOfBirth: "2011-09-11",
       breed: {
         id: 207,
-        name: "CHIHUAHUA",
+        name: "CHIHUAHUA"
       },
       temper: {
         id: 3,
-        name: "easy-going",
+        name: "easy-going"
       },
       walks: [],
       male: false,
       defaultDog: true,
       neutered: false,
-    },
-  ],
+    }
+  ]
 };
