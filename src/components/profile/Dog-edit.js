@@ -15,10 +15,26 @@ function DogEdit({ dog }) {
   const neuteredString = neutered ? "yes" : "no";
 
   const [breeds, setBreeds] = useState([]);
+
+  function handleReceivedBreeds(data) {
+    data.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+    setBreeds(data);
+  }
+
   function loadBreeds() {
     axios
       .get("http://localhost:8080/api/v1/breeds?type=allData", config)
-      .then((data) => setBreeds(data.data));
+      .then((data) => {
+        handleReceivedBreeds(data.data);
+      });
   }
   const [tempers, setTempers] = useState([]);
   function loadTempers() {
@@ -109,11 +125,10 @@ function DogEdit({ dog }) {
           </div>
           <div className={"dog-description"}>
             <div className={"description-title"}> sex:</div>
-            <select
-              className={"description-content-edit"}
-              name={"male"}
-            >
-              <option value={null} disabled selected hidden>{maleString}</option>
+            <select className={"description-content-edit"} name={"male"}>
+              <option value={null} disabled selected hidden>
+                {maleString}
+              </option>
               <option value="yes">male</option>
               <option value="no">female</option>
             </select>
@@ -132,39 +147,40 @@ function DogEdit({ dog }) {
           </div>
           <div className={"dog-description"}>
             <div className={"description-title"}> breed:</div>
-            <select
-              className={"description-content-edit"}
-              name={"breed"}
-            >
-              <option value={null} disabled selected hidden>{breed.name}</option>
+            <select className={"description-content-edit"} name={"breed"}>
+              <option value={null} disabled selected hidden>
+                {breed.name}
+              </option>
               {breeds.map((breed) => {
                 return (
-                  <option key={breed.id} value={JSON.stringify(breed)}>{breed.name}</option>
+                  <option key={breed.id} value={JSON.stringify(breed)}>
+                    {breed.name}
+                  </option>
                 );
               })}
             </select>
           </div>
           <div className={"dog-description"}>
             <div className={"description-title"}> temper:</div>
-            <select
-              className={"description-content-edit"}
-              name={"temper"}
-            >
-              <option value={null} disabled selected hidden>{temper.name}</option>
+            <select className={"description-content-edit"} name={"temper"}>
+              <option value={null} disabled selected hidden>
+                {temper.name}
+              </option>
               {tempers.map((temper) => {
                 return (
-                  <option key={temper.id} value={JSON.stringify(temper)}>{temper.name}</option>
+                  <option key={temper.id} value={JSON.stringify(temper)}>
+                    {temper.name}
+                  </option>
                 );
               })}
             </select>
           </div>
           <div className={"dog-description"}>
             <div className={"description-title"}> neutered:</div>
-            <select
-              className={"description-content-edit"}
-              name={"neutered"}
-            >
-              <option value={null} disabled selected hidden>{neuteredString}</option>
+            <select className={"description-content-edit"} name={"neutered"}>
+              <option value={null} disabled selected hidden>
+                {neuteredString}
+              </option>
               <option value="yes">yes</option>
               <option value="no">no</option>
             </select>
