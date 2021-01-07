@@ -8,11 +8,11 @@ function DogEdit({ dog }) {
   const config = {
     headers: { Authorization: `${token}`, withCredentials: true },
   };
-  const { id, name, isMale, dateOfBirth, breed, temper, isNeutered } = dog;
+  const { id, name, male, dateOfBirth, breed, temper, neutered } = dog;
 
   const [isChanged, setIsChanged] = useState(false);
-  const isMaleString = isMale ? "male" : "female";
-  const isNeuteredString = isNeutered ? "yes" : "no";
+  const maleString = male ? "male" : "female";
+  const neuteredString = neutered ? "yes" : "no";
 
   const [breeds, setBreeds] = useState([]);
   function loadBreeds() {
@@ -34,11 +34,11 @@ function DogEdit({ dog }) {
 
   const [form, setForm] = useState({
     name: name,
-    isMale: isMaleString,
+    male: maleString,
     dateOfBirth: dateOfBirth,
     breed: breed,
     temper: temper,
-    isNeutered: isNeuteredString,
+    neutered: neuteredString,
   });
 
   function handleChange(e) {
@@ -53,11 +53,11 @@ function DogEdit({ dog }) {
     console.log(temper);
     const data = {
       name: form.name,
-      isMale: form.isMale === "yes",
+      male: form.male === "yes",
       dateOfBirth: form.dateOfBirth,
       breed: form.breed !== breed ? JSON.parse(form.breed) : null,
       temper: form.temper !== temper ? JSON.parse(form.temper) : null,
-      isNeutered: form.isNeutered === "yes",
+      neutered: form.neutered === "yes",
     };
 
     console.log(data);
@@ -111,9 +111,9 @@ function DogEdit({ dog }) {
             <div className={"description-title"}> sex:</div>
             <select
               className={"description-content-edit"}
-              name={"isMale"}
+              name={"male"}
             >
-              <option value={null} disabled selected hidden>{isMaleString}</option>
+              <option value={null} disabled selected hidden>{maleString}</option>
               <option value="yes">male</option>
               <option value="no">female</option>
             </select>
@@ -139,7 +139,7 @@ function DogEdit({ dog }) {
               <option value={null} disabled selected hidden>{breed.name}</option>
               {breeds.map((breed) => {
                 return (
-                  <option value={JSON.stringify(breed)}>{breed.name}</option>
+                  <option key={breed.id} value={JSON.stringify(breed)}>{breed.name}</option>
                 );
               })}
             </select>
@@ -153,7 +153,7 @@ function DogEdit({ dog }) {
               <option value={null} disabled selected hidden>{temper.name}</option>
               {tempers.map((temper) => {
                 return (
-                  <option value={JSON.stringify(temper)}>{temper.name}</option>
+                  <option key={temper.id} value={JSON.stringify(temper)}>{temper.name}</option>
                 );
               })}
             </select>
@@ -162,9 +162,9 @@ function DogEdit({ dog }) {
             <div className={"description-title"}> neutered:</div>
             <select
               className={"description-content-edit"}
-              name={"isNeutered"}
+              name={"neutered"}
             >
-              <option value={null} disabled selected hidden>{isNeuteredString}</option>
+              <option value={null} disabled selected hidden>{neuteredString}</option>
               <option value="yes">yes</option>
               <option value="no">no</option>
             </select>
