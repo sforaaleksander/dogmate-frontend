@@ -46,4 +46,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 * LinkedIn:
     - [@rafal-wypasek](https://linkedin.com/in/rafal-wypasek)
     - [@aleksander-jednaszewski](https://www.linkedin.com/in/aleksander-jednaszewski/)
-    - [@mateusz-gołda](https://www.linkedin.com/in/mateusz-go%C5%82da-0246a8125/)
+    - [@mateusz-gołda](https://www.linkedin.com/in/mateusz-golda/)
